@@ -5,15 +5,20 @@
     parameter to be set to 0 for a valid account. Invalid accounts will return a 1.
 
 ## Usage
-    This script depends on the Python "Requests" library. The script can take a single email address
-    with the -e parameter or a list of email addresses, one per line, with the -f parameter. 
-    Additionally, the script can output valid email addressesto a file with the -o parameter.
+    This script depends on the Python "Requests" library and now supports both Python2/Python3.
+ 
+    pip install -r requirements.txt
+
+    The script can take a single email address with the -e parameter or a list of email addresses,
+    one per line, with the -f parameter. Additionally, the script can output valid email addresses
+    to a file with the -o parameter. You can now throttle requests with the -t parameter.
     
     Examples:
     o365creeper.py -e test@example.com
     o365creeper.py -f emails.txt
     o365creeper.py -f emails.txt -o validemails.txt
-
+    o365creeper.py -f emails.txt -o validemails.txt -t 5
+    
 ## NOTE
     Office 365 will flag these requests randomly after repeated, successive attempts to validate the 
     same email address which may generate false positives such as invalid email addresses showing as 
